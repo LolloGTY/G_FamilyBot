@@ -28,7 +28,9 @@ client.on("messageCreate", (message) => {
     if(message.content == "/twich"){
         message.channel.send("Ecco il canale tiwch: https://www.twitch.tv/ghyoutubi")
     }
-    
+    if(message.content == "Bot saluta"){
+        message.channel.send("Ciao a tutti ")
+    }
     
    
 })
