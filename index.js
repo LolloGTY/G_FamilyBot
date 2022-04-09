@@ -29,9 +29,13 @@ client.on("messageCreate", (message) => {
         message.channel.send("Ecco il canale tiwch: https://www.twitch.tv/ghyoutubi")
     }
     if(message.content == "Bot saluta"){
-        message.channel.send("Ciao a tutti ")
+        if(message.member.roles.cache.has("939160799501504543")){
+            message.channel.send("Ciao a tutti ")  
+        }
     }
-    
+    else{
+        message.channel.send("Non ho voglia di salutare ")
+    }
    
 })
 
