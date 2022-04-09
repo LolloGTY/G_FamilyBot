@@ -28,14 +28,6 @@ client.on("messageCreate", (message) => {
     if(message.content == "/twich"){
         message.channel.send("Ecco il canale tiwch: https://www.twitch.tv/ghyoutubi")
     }
-    if(message.content == "Bot saluta"){
-        if(message.member.roles.cache.has("939160799501504543")){
-            message.channel.send("Ciao a tutti ")  
-        }
-    }
-    else{
-        message.channel.send("Non ho voglia di salutare ")
-    }
    
 })
 
@@ -43,3 +35,11 @@ client.on("guildMemberAdd", (member) => {
     client.channels.cache.get("939224842111160381").send("Benvenuto " + member.toString() + " in " + member.guild.name + ", sei il " + member.guild.memberCount + "° membro" )
 })
 
+client.on("messageCreate", (message) => {
+    if(message.content == "Bot saluta"){
+        if(message.member.roles.cache.has("939160799501504543")){
+            message.channel.send("Ciao a tutti ")  
+        }
+    }   
+    
+})
