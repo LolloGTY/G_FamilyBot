@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({intents:["GUILDS","GUILD_MEMBERS","GUILD_MESSAGES","GUILD_INTEGRATIONS","GUILD_MESSAGE_REACTIONS"]}); //<-- RICORDARSI QUESTO
+const mysql = require("mysql")
 
 client.login("OTQ5NjIwNzYzNDE2MjExNDc2.YiNBQQ.d5DxNuNL_Vm8IdlK5Ac8WP3q5bg");
 
@@ -134,7 +135,7 @@ client.on("messageCreate", message => {
 })
 
 client.on("messageCreate", message => {
-    if (message.content.startsWith("/ban")) {
+    if (message.content.startsWith("!ban")) {
         var utente = message.mentions.members.first();
         if (!message.member.permissions.has('BAN_MEMBERS')) {
             return message.channel.send('Non hai il permesso');
@@ -157,7 +158,7 @@ client.on("messageCreate", message => {
 })
 
 client.on("messageCreate", async message => {
-    if (message.content.startsWith("/unban")) {
+    if (message.content.startsWith("!unban")) {
         if (!message.member.permissions.has('BAN_MEMBERS')) {
             return message.channel.send('Non hai il permesso');
         }
@@ -196,37 +197,11 @@ client.on("messageCreate", message => {
         if (count > 100) {
             return message.channel.send("Non puoi cancellare più di 100 messaggi")
         }
-        message.channel.bulkDelete(count, true)
+        message.channel.bulkDelete(count, true) 
         message.channel.send(count + " messaggi eliminati").then(msg => {
             setTimeout(() => msg.delete(), 5000)
         })
     }
 })
 
-client.on("messageCreate", message => {
-    if (message.content.startsWith("/say")) {
-        var args = message.content.split(/\s+/);
-        var testo;
-        testo = args.slice(1).join(" ");
-        if (!testo) {
-            return message.channel.send("Inserire un messaggio");
-        }
-        if (message.content.includes("@everyone") || message.content.includes("@here")) {
-            return message.channel.send("Non taggare everyone o here");
-        }
-        message.delete()
 
-        //Messaggio classico
-        message.channel.send(testo)
-
-    }
- 
-})
-
-
-client.on('ready', () => {
-    //Stato classico (Sta guardando..., Sta giocando a...)
-    client.user.setActivity('Un Video di gh--_-', { type: 'WATCHING' }); //Oppure LISTENING, PLAYING
-    //Stato online/offine/non disturbare... (Potrebbe volerci qualche tempo per doversi settare)
-    client.user.setStatus('online') //Oppure idle, dnd, invisible
-})
