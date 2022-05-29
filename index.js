@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({intents:["GUILDS","GUILD_MEMBERS","GUILD_MESSAGES","GUILD_INTEGRATIONS","GUILD_MESSAGE_REACTIONS", "GUILD_VOICE_STATES"]}); //<-- RICORDARSI QUESTO
 const mysql = require("mysql")
 
-client.login("OTQ5NjIwNzYzNDE2MjExNDc2.YiNBQQ.d5DxNuNL_Vm8IdlK5Ac8WP3q5bg");
+client.login("OTQ5NjIwNzYzNDE2MjExNDc2.GFTE-R.s1QoqqLnZVWN-kyLqoFavo0cT9p0sOVqpMOahU");
 
 client.on("ready", () => {
     console.log("Bot online")
