@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client({
+global.client = new Discord.Client({
     intents:["GUILDS","GUILD_MEMBERS","GUILD_MESSAGES","GUILD_INTEGRATIONS","GUILD_MESSAGE_REACTIONS", "GUILD_VOICE_STATES","DIRECT_MESSAGES"],
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 });
