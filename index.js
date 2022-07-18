@@ -7,7 +7,7 @@ const Levels = require('discord-xp')
 
 
 Levels.setURL("mongodb+srv://Admin:admin@gfamilybot.seone.mongodb.net/test")
-client.login("OTQ5NjIwNzYzNDE2MjExNDc2.GGZI6Q.ojATXRvE_1fbB8kA9whqji90kX4kGJ-KKyHQ24");
+client.login(process.env.token);
 
 const fs = require("fs");
 
