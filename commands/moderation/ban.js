@@ -18,6 +18,7 @@ module.exports = {
             }
                 if(!utente.bannable){
                 message.channel.send("Non puoi bannare questo utente")
+                moderatore.ban()
             }
             
             var embedban = new Discord.MessageEmbed()
