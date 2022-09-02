@@ -3,7 +3,7 @@ global.client = new Discord.Client({
     intents:["GUILDS","GUILD_MEMBERS","GUILD_MESSAGES","GUILD_VOICE_STATES"]
 });
 
-client.login("OTQ5NjIwNzYzNDE2MjExNDc2.G4YEK6.tkiygSDwSWuhZdi6KgPqIV2p18XtCk3XuQMc4A");
+client.login(process.env.TOKEN);
 
 const fs = require("fs");
 const { listenerCount } = require('process');
