@@ -4,6 +4,8 @@ module.exports = {
     name: "test",
     description: "jdsfkjd",
     execute(message){
-        message.channel.send("ciao")
+        message.channel.send("🟢 Bot Online")
+
+    
     }
 }

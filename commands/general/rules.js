@@ -4,6 +4,10 @@ module.exports = {
     name: "rules",
     description: "jdsfkjd",
     execute(message){
+        if (!message.member.permissions.has("MANAGE_ROLES")){
+            return message.channel.send("Non hai il permesso di auto srcivere le regole se vuoi vederle vai in #📜｜𝓡𝓾𝓵𝓮𝓼 ")
+        }
+        
         message.channel.send("📜 REGOLE DELLA COMMUNITY 📜")
         message.channel.send("Benvenuti in questa grandiosa community con tantissimi utenti, ogni giorno potrete parlare, divertirsi in tutte le chat del server")
         message.channel.send("Ci sono però alcune regole principali da rispettare per mantenere questo server un luogo di incontro sano e pacifico:")
